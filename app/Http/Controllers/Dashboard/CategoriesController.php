@@ -22,7 +22,7 @@ class CategoriesController extends Controller
     public function index(Request $request)
     {
 
-        $query = Category::query();
+        // $query = Category::query();
 
 
         // if ($name = $request->query('name')) {
