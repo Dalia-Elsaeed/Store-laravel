@@ -11,7 +11,8 @@
 <div class="form-group mb-3">
     <x-form.input label="Category Name" class="form-control-lg" role="input" name="name" :value="$category->name" />
 </div>
-    <label for="">Category Parent</label>
+<label for="">Category Parent</label>
+<div class="form-group">
     <select name="parent_id" class="form-control form-select">
         <option value="">Primary Category</option>
         @foreach ($parents as $parent)
@@ -33,12 +34,11 @@
     @endif
 </div>
 
-<div class="form-group">
-    <label for="Status"></label>
-    <div>
-        <x-form.radio name="status" :checked="$category->status" :options="['Active','inactive'=>'InActive']" />
+<div class="form-group mb-3">
+    <label>Status</label>
+    <x-form.radio name="status" :checked="$category->status" :options="['active' => 'Active', 'inactive' => 'Inactive']" />
+</div>
 
 <div class="form-group">
     <button type="submit" class="btn btn-primary">{{ $button_label ?? 'Save' }}</button>
-</div>
 </div>
