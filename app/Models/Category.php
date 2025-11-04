@@ -82,7 +82,6 @@ class Category extends Model
                 'dimensions:min_width=100,min_height=100'
             ],
             'status' => 'required|in:active,inactive',
-
         ];
     }
 }
