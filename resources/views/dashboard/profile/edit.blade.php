@@ -6,6 +6,8 @@
     @parent
     <li class="breadcrumb-item active">Edit Profile</li>
 @endsection
+@section('content')
+    <x-alert type="Success !!" />
 
 @section('content')
     <form action="{{ route('dashboard.profile.update') }}" method="post" enctype="multipart/form-data">
@@ -24,6 +26,7 @@
                     <x-form.input name="birthday" label="Birthday" :value="$user->profile->birthday" />
                 </div>
                 <div class="col-md-6">
+                    <x-form.radio name="gender" :options="['male','female']" :checked="$user->profile->gender" />
                     <x-form.radio name="gender" :options="['male', 'female']" :checked="$user->profile->gender" />
                 </div>
             </div>
@@ -46,6 +49,11 @@
                     <div class="col-md-6">
                         <x-form.select name="locale" :options="$locales" label="Locale" :selected="$user->profile->locale" />
                     </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Save</button>
+
                     <button type="submit" class="btn btn-primary">Save</button>
                 </div>
             </div>
