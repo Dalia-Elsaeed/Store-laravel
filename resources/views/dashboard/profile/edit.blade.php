@@ -8,6 +8,8 @@
 @endsection
 @section('content')
     <x-alert type="Success !!" />
+
+@section('content')
     <form action="{{ route('dashboard.profile.update') }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('patch')
@@ -25,6 +27,7 @@
                 </div>
                 <div class="col-md-6">
                     <x-form.radio name="gender" :options="['male','female']" :checked="$user->profile->gender" />
+                    <x-form.radio name="gender" :options="['male', 'female']" :checked="$user->profile->gender" />
                 </div>
             </div>
             <div class="form-row">
@@ -51,5 +54,9 @@
         </div>
         <button type="submit" class="btn btn-primary mt-3">Save</button>
 
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
     </form>
 @endsection

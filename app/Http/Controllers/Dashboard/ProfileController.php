@@ -18,6 +18,8 @@ class ProfileController extends Controller
             'user' => $user,
             'countries' => Countries::getNames('en'),
             'locales' => Languages::getNames('en'),
+            'countries' => Countries::getNames(),
+            'locales' => Languages::getNames(),
         ]);
     }
     public function update(Request $request)
